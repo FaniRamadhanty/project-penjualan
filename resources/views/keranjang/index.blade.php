@@ -36,7 +36,7 @@ Dashboard
                             <tr>
                                 <td>{{$no++}}</td>
                                 <td>{{$data->barang->nama_barang}}</td>
-                                <td>{{$data->total_harga}}</td>
+                                <td>Rp.{{number_format ($data->total_harga)}}</td>
                                 <td>{{$data->jumlah_produk}}</td>
                                 <td>
                                     <form action="{{ route('keranjang.destroy', $data->id) }}" method="post">

@@ -40,7 +40,7 @@ Dashboard
                                 <td>{{$data->order->nama}}</td>
                                 <td>{{$data->waktu_pembayaran}}</td>
                                 <td>{{$data->metode_pembayaran}}</td>
-                                <td>{{$data->jumlah_bayar}}</td>
+                                <td>Rp.{{number_format ($data->jumlah_bayar)}}</td>
                                 <td>
                                     <form action="{{ route('transaksi.destroy', $data->id) }}" method="post">
                                         @method('delete')

@@ -40,7 +40,7 @@ Dashboard
                                 <td>{{$data->kategori->nama_kategori}}</td>
                                 <td>{{$data->nama_barang}}</td>
                                 <td><img src="{{$data->image()}}" alt="" style="width:150px; height:150px;" alt="Cover"></td>
-                                <td>{{$data->harga}}</td>
+                                <td>Rp.{{number_format ($data->harga)}}</td>
                                 <td>{{$data->stok}}</td>
                                 <td>
                                     <form action="{{ route('barang.destroy', $data->id) }}" method="post">

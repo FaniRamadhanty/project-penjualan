@@ -9,8 +9,8 @@ class Transaksi extends Model
 {
     use HasFactory;
     
-    protected $visible = ['id_transaksi', 'waktu_pembayaran', 'metode_pembayran', 'jumlah_bayar'];
-    protected $fillable = ['id_transaksi', 'waktu_prmbayaran', 'metode_pembayran', 'jumlah_bayar'];
+    protected $visible = ['id_transaksi', 'waktu_pembayaran', 'metode_pembayaran', 'jumlah_bayar'];
+    protected $fillable = ['id_transaksi', 'waktu_pembayaran', 'metode_pembayaran', 'jumlah_bayar'];
     public $timestamps = true;
 
     public function order()

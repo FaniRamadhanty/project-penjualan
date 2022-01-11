@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>SPORT </b>SHOP',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -238,11 +238,13 @@ return [
             'text'       => 'kategori',
             'icon_color' => 'red',
             'url'        => 'kategori',
+            
         ],
         [
             'text'       => 'barang',
             'icon_color' => 'yellow',
             'url'        => 'barang',
+            
         ],
         [
             'text'       => 'keranjang',

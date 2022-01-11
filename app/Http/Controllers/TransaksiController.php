@@ -62,7 +62,9 @@ class TransaksiController extends Controller
      */
     public function show($id)
     {
-      
+        $transaksi = Transaksi::findOrFail($id);
+        $order = Order::all();
+        return view('Transaksi.show', compact('transaksi', 'order'));
     }
 
     /**
@@ -73,7 +75,9 @@ class TransaksiController extends Controller
      */
     public function edit($id)
     {
-       
+        $transaksi = Transaksi::findOrFail($id);
+        $order = Order::all();
+        return view('transaksi.edit', compact('transaksi', 'order'));
     }
 
     /**
@@ -85,9 +89,22 @@ class TransaksiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $validated = $request->validate([
+            'id_transaksi'=>'required',
+            'waktu_pembayaran'=>'required',
+            'metode_pembayaran'=>'required',
+            'jumlah_bayar'=>'required',
+        ]);
+    
+            $transaksi = Transaksi::findOrFail($id);
+            $transaksi->id_transaksi = $request->id_transaksi;
+            $transaksi->waktu_pembayaran = $request->waktu_pembayaran;  
+            $transaksi->metode_pembayaran = $request->metode_pembayaran;
+            $transaksi->jumlah_bayar = $request->jumlah_bayar;
+            $transaksi->save();
+            return redirect()->route('transaksi.index');
     }
-
+ 
     /**
      * Remove the specified resource from storage.
      *
@@ -96,6 +113,9 @@ class TransaksiController extends Controller
      */
     public function destroy($id)
     {
+        $transaksi = Transaksi::findOrFail($id);
+        $transaksi->delete();
+        return redirect()->route('transaksi.index');
       
     }
 }
